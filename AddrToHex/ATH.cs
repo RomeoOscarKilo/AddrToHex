@@ -6,20 +6,20 @@ namespace ATX
         static void Main()
         {
             Console.Write("Please enter the hex offset: ");
-            string input = Console.ReadLine();
-            if(input.Length % 2  == 1)
+            string userI = Console.ReadLine();
+            if(userI.Length % 2  == 1)
             {
-                input = "0" + input;
+                userI = "0" + userI;
             }
-            char[] address = input.ToCharArray();
-            string output = "";
+            char[] address = userI.ToCharArray();
+            userI = "";
             for(int i = address.Length; i > 0; i -=2 )
             {
-                output += "\\";
-                output += @"x" + address[i - 2];
-                output += address[i - 1];
+                userI += "\\";
+                userI += @"x" + address[i - 2];
+                userI += address[i - 1];
             }
-            Console.WriteLine(output);
+            Console.WriteLine(userI);
             Main();
         }
     }
